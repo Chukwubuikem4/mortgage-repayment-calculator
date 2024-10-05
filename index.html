@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="font-jakarta">
+
+  <div id="container" class="bg-slate100 h-screen w-screen lg:flex flex-row justify-center items-center">
+
+    <div id="card" class="bg-white flex flex-col lg:flex-row lg:w-2/3 rounded">
+  
+      <section id="first-container" class="bg-white p-4 lg:p-7 lg:w-1/2 rounded-l">
+  
+        <header class=" pb-5 lg:flex flex-row justify-between">
+          <h1 class="font-bold text-slate900 pb-2">Mortgage Calculator</h1>
+          <small id="clear-all" class="text-slate700 underline cursor-pointer font-semibold">Clear All</small>
+        </header>
+      
+        <form action="#">
+          <div id="form-control">
+            <label for="mortgage-amount" class="text-slate700 font-semibold text-sm">Mortgage Amount</label>
+            <div class="flex flex-row border border-slate700 rounded mt-2">
+              <p id="icon" class="w-1/7 p-2.5 px-5 pounds bg-slate100 rounded-l font-semibold text-slate700">£</p>
+              <input class="rounded outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-amount" id="mortgage-amount">
+            </div>
+            <small id="error-msg" class="error-msg"></small>
+          </div>
+          
+          <div class="flex flex-row justify-between my-2 py-3 gap-x-6">
+
+            <div id="form-control" class="flex flex-col w-1/2">
+              <label for="mortgage-term" class="text-slate700 font-semibold text-sm">Mortgage Term</label>
+              <div class="flex flex-row border border-slate700 rounded mt-2">
+                <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-term" id="mortgage-term">
+                <p id="icon" class="w-2/4 p-2.5 px-5 years bg-slate100 rounded-r font-semibold text-slate700">years</p>
+              </div>
+              <small id="error-msg" class="error-msg"></small>
+            </div>
+
+            <div id="form-control" class="flex flex-col w-1/2">
+              <label for="interest-rate" class="text-slate700 font-semibold text-sm">Interest Rate</label>
+              <div class="flex flex-row border border-slate700 rounded mt-2">
+                <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="interest-rate" id="interest-rate">
+                <p id="icon" class="w-1/4 p-2.5 px-5 pounds bg-slate100 rounded-r font-semibold text-slate700">%</p>
+              </div>
+              <small id="error-msg" class="error-msg"></small>
+            </div>
+
+          </div>
+      
+          <div class="pb-5 mb-2">
+            <label for="mortgage type" class="text-slate700 font-semibold text-sm">Mortgage Type</label>
+            <div id="form-control" class="flex flex-col gap-y-3 mt-2">
+
+              <label class="cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
+                <input class="pl-5" type="radio" name="MortgageType" id="mortgage-type-repayment"><span class="pl-4">Repayment</span>
+              </label>
+
+              <label class="cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
+                <input type="radio" name="MortgageType" id="mortgage-type-interest"><span class="pl-4">Interest Only</span>
+              </label>
+              
+            </div>
+            <small id="error-msg" class="error-msg"></small>
+
+          </div>
+      
+          <div>
+            <button id="calc-btn" class="hover:bg-opacity-30 w-full mx-auto border rounded-full bg-lime font-bold py-3 px-5 flex flex-row justify-center" type="submit">
+              <img src="./assets/images/icon-calculator.svg" alt=""> 
+              <span>Calculate Repayments</span>
+            </button>
+          </div>
+        </form>
+  
+      </section>
+  
+      <section id="second-container" class="mt-2 lg:mt-0 p-4 bg-slate900 lg:rounded-bl-lg lg:p-8 lg:w-1/2 rounded-r">
+    
+        <!-- Empty results start -->
+        <div id="empty-results" class=" py-4  lg:py-0 flex lg:h-full flex-col flex flex-col justify-center items-center text-center">
+          
+          <div>
+            <img src="./assets/images/illustration-empty.svg" alt="">
+          </div>
+          
+          <div id="empty-texts">
+            <h2 class="text-white font-bold mb-3">Results shown here</h2>
+            <p class="text-slate300">
+              Complete the form and click “calculate repayments” to see what 
+              your monthly repayments would be.
+            </p>
+          </div>
+    
+        </div>
+    
+        <!-- Completed results start -->
+        <div id="completed-results" class="hidden mb-4">
+    
+          <div id="completed-texts">
+            <h2 class="text-white font-bold mb-3">Your results</h2>
+            <p class="text-slate300">
+              Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
+            </p>
+          </div>
+    
+          <div id="result-container" class="border-t-4 border-lime rounded p-7 py-4 mt-8 bg-slate900">
+    
+            <div id="monthly-repayments" class=" mb-8">
+              <p class="text-slate300 mb-4">Your monthly repayments</p>
+              <h1 id="monthly-repayment-result" class="text-lime font-bold text-6xl"></h1>
+            </div>
+      
+            <div id="over-the-term" class="border-t border-slate500 pt-6 pb-2">
+              <p class="text-slate300 mb-2">Total you'll repay over the term</p>
+              <h3 id="over-the-term" class="text-white font-bold text-lg"></h3>
+            </div>
+    
+          </div>
+    
+        </div>
+      </section>
+  
+      </div>
+
+  </div>
+
+    
+    
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Chukwubuikem4">Chukwubuikem4</a>.
+  </div> -->
+  <script src="https://kit.fontawesome.com/240a052288.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

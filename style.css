@@ -17,10 +17,17 @@ div#result-container.bg-slate900{
     color: hsl(202, 55%, 16%);
 }
 
+.active-border{
+    border: 1px solid hsl(61, 70%, 52%);
+}
 
 .error{
     background-color: hsl(4, 69%, 50%);
     color: hsl(0, 0%, 100%);
+}
+
+.error-border{
+    border: 1px solid hsl(4, 69%, 50%);
 }
 
 .error-msg{

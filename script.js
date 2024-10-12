@@ -18,6 +18,7 @@ form.addEventListener('submit', (e)=>{
     getFormErrors();
     checkRadio();
     radioErrorCheck();
+    resetRadioError()
 
     // Values for Mortgage Calculation
     let amountValue = amount_input.value;
@@ -109,6 +110,21 @@ const removeErrors = (input) =>{
         inputParent.classList.remove('error-border')
     }
     
+}
+
+// Radio Error Reset
+const resetRadioError = () =>{
+    if (radioInputs[0].checked === true && radioInputs[1].checked === false){
+        const radioParent = document.querySelector('#radio-parent');
+        const errorMessage = radioParent.querySelector('span')
+        errorMessage.innerText = "";
+
+    } else if (radioInputs[0].checked === false && radioInputs[1].checked === true){
+        const radioParent = document.querySelector('#radio-parent');
+        const errorMessage = radioParent.querySelector('span')
+        errorMessage.innerText = "";
+
+    }
 }
 
 /* ACTIVE STATE */

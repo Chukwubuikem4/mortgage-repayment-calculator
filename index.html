@@ -18,14 +18,14 @@
 </head>
 <body class="font-jakarta">
 
-  <div id="container" class="bg-slate100 h-screen w-screen lg:flex flex-row justify-center items-center">
+  <div id="container" class="bg-slate100 h-screen w-screen lg:flex flex-row justify-center items-center py-7">
 
-      <div id="card" class="bg-white flex flex-col lg:flex-row lg:w-2/3 rounded">
+    <div id="card" class="flex flex-col lg:flex-row w-2/3 mx-auto lg:w-2/3">
   
-      <section id="first-container" class="bg-white p-4 lg:p-7 lg:w-1/2 rounded-l">
+      <section id="first-container" class="bg-white p-4 lg:p-7 lg:w-1/2 border-radius-left">
   
-        <header class=" pb-5 lg:flex flex-row justify-between">
-          <h1 class="font-bold text-slate900 pb-2">Mortgage Calculator</h1>
+        <header class="pb-5 lg:flex flex-row justify-between items-center">
+          <h1 class="text-2xl font-bold text-slate900 pb-2">Mortgage Calculator</h1>
           <small id="clear-all" class="text-slate700 underline cursor-pointer font-semibold">Clear All</small>
         </header>
       
@@ -37,7 +37,7 @@
               <label id="icon" class="w-1/7 p-2.5 px-5 pounds bg-slate100 rounded-l font-semibold text-slate700">&pound;</label>
               <input class="rounded outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-amount" id="amount">
             </div>
-            <span></span>
+            <span class="text-xs"></span>
           </div>
           
           <div class="flex flex-row justify-between my-2 py-3 gap-x-6">
@@ -48,7 +48,7 @@
                 <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-term" id="term">
                 <label id="icon" class="w-2/5 lg:w-2/4 p-2.5 px-5 years bg-slate100 rounded-r font-semibold text-slate700">years</label>
               </div>
-              <span></span>
+              <span class="text-xs"></span>
             </div>
 
             <div id="form-control" class="flex flex-col w-1/2">
@@ -57,25 +57,25 @@
                 <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="interest-rate" id="rate">
                 <label id="icon" class="w-1/5 lg:w-1/4 p-2.5 px-5 pounds bg-slate100 rounded-r font-semibold text-slate700">%</label>
               </div>
-              <span></span>
+              <span class="text-xs"></span>
             </div>
 
           </div>
       
-          <div class="pb-5 mb-2">
+          <div id="radio-parent" class="pb-5 mb-2">
             <h2 for="mortgage type" class="text-slate700 font-semibold text-sm">Mortgage Type</h2>
             <div id="form-control" class="flex flex-col gap-y-3 mt-2">
 
-              <label class="cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
-                <input class="pl-5" type="radio" name="MortgageType" id="mortgage-type-repayment"><span class="pl-4">Repayment</span>
+              <label class="flex items-center cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
+                <input type="radio" name="MortgageType" id="repayment">Repayment
               </label>
 
-              <label class="cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
-                <input type="radio" name="MortgageType" id="mortgage-type-interest"><span class="pl-4">Interest Only</span>
+              <label class="flex items-center cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
+                <input type="radio" name="MortgageType" id="interest">Interest Only
               </label>
               
             </div>
-            <span></span>
+            <span class="text-xs"></span>
 
           </div>
       
@@ -89,7 +89,7 @@
   
       </section>
   
-      <section id="second-container" class="mt-2 lg:mt-0 p-4 bg-slate900 lg:rounded-bl-lg lg:p-8 lg:w-1/2 rounded-r">
+      <section id="second-container" class=" lg:mt-0 p-4 bg-slate900 lg:p-8 lg:w-1/2 border-radius-right">
     
         <!-- Empty results start -->
         <div id="empty-results" class=" py-4  lg:py-0 flex lg:h-full flex-col flex flex-col justify-center items-center text-center">
@@ -122,12 +122,12 @@
     
             <div id="monthly-repayments" class=" mb-8">
               <p class="text-slate300 mb-4">Your monthly repayments</p>
-              <h1 id="monthly-repayment-result" class="text-lime font-bold text-6xl"></h1>
+              <h1 id="monthly-repayment-result" class="text-lime font-bold text-6xl">£</h1>
             </div>
       
             <div id="over-the-term" class="border-t border-slate500 pt-6 pb-2">
               <p class="text-slate300 mb-2">Total you'll repay over the term</p>
-              <h3 id="over-the-term" class="text-white font-bold text-lg"></h3>
+              <h3 id="over-the-term-result" class="text-white font-bold text-lg">£</h3>
             </div>
     
           </div>
@@ -135,7 +135,7 @@
         </div>
       </section>
   
-      </div>
+    </div>
 
   </div>
 
@@ -146,8 +146,6 @@
     Coded by <a href="https://github.com/Chukwubuikem4">Chukwubuikem4</a>.
   </div> -->
   <script src="https://kit.fontawesome.com/240a052288.js" crossorigin="anonymous"></script>
-  <script src="JS/error-vaildation.js"></script>
-  <script src="JS/active-state.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

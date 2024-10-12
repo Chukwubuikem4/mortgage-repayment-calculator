@@ -8,17 +8,6 @@ module.exports = {
       lg: '976px',
       xl: '1440px'
     },
-    
-    borderRadius: {
-      'none': '0',
-     'sm': '0.125rem',
-     DEFAULT: '0.25rem',
-     DEFAULT: '4px',
-     'md': '20rem',
-     'lg': '5rem',
-     'full': '9999px',
-     'xl': '8rem',
-    },
 
     extend: {
       

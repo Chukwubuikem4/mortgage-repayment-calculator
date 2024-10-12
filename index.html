@@ -20,7 +20,7 @@
 
   <div id="container" class="bg-slate100 h-screen w-screen lg:flex flex-row justify-center items-center">
 
-    <div id="card" class="bg-white flex flex-col lg:flex-row lg:w-2/3 rounded">
+      <div id="card" class="bg-white flex flex-col lg:flex-row lg:w-2/3 rounded">
   
       <section id="first-container" class="bg-white p-4 lg:p-7 lg:w-1/2 rounded-l">
   
@@ -30,39 +30,40 @@
         </header>
       
         <form action="#">
+
           <div id="form-control">
-            <label for="mortgage-amount" class="text-slate700 font-semibold text-sm">Mortgage Amount</label>
+            <h2 class="text-slate700 font-semibold text-sm">Mortgage Amount</h2>
             <div id="input-parent" class="flex flex-row border border-slate700 rounded mt-2">
-              <p id="icon" class="w-1/7 p-2.5 px-5 pounds bg-slate100 rounded-l font-semibold text-slate700">£</p>
-              <input class="rounded outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-amount" id="mortgage-amount">
+              <label id="icon" class="w-1/7 p-2.5 px-5 pounds bg-slate100 rounded-l font-semibold text-slate700">&pound;</label>
+              <input class="rounded outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-amount" id="amount">
             </div>
-            <small id="error-msg" class="error-msg"></small>
+            <span></span>
           </div>
           
           <div class="flex flex-row justify-between my-2 py-3 gap-x-6">
 
             <div id="form-control" class="flex flex-col w-1/2">
-              <label for="mortgage-term" class="text-slate700 font-semibold text-sm">Mortgage Term</label>
+              <h2 class="text-slate700 font-semibold text-sm">Mortgage Term</h2>
               <div class="flex flex-row border border-slate700 rounded mt-2">
-                <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-term" id="mortgage-term">
-                <p id="icon" class="w-2/4 p-2.5 px-5 years bg-slate100 rounded-r font-semibold text-slate700">years</p>
+                <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="mortgage-term" id="term">
+                <label id="icon" class="w-2/5 lg:w-2/4 p-2.5 px-5 years bg-slate100 rounded-r font-semibold text-slate700">years</label>
               </div>
-              <small id="error-msg" class="error-msg"></small>
+              <span></span>
             </div>
 
             <div id="form-control" class="flex flex-col w-1/2">
-              <label for="interest-rate" class="text-slate700 font-semibold text-sm">Interest Rate</label>
+              <h2 class="text-slate700 font-semibold text-sm">Interest Rate</h2>
               <div class="flex flex-row border border-slate700 rounded mt-2">
-                <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="interest-rate" id="interest-rate">
-                <p id="icon" class="w-1/4 p-2.5 px-5 pounds bg-slate100 rounded-r font-semibold text-slate700">%</p>
+                <input class="rounded-l outline-none w-full p-2 pl-3 text-slate900 font-bold" type="number" name="interest-rate" id="rate">
+                <label id="icon" class="w-1/5 lg:w-1/4 p-2.5 px-5 pounds bg-slate100 rounded-r font-semibold text-slate700">%</label>
               </div>
-              <small id="error-msg" class="error-msg"></small>
+              <span></span>
             </div>
 
           </div>
       
           <div class="pb-5 mb-2">
-            <label for="mortgage type" class="text-slate700 font-semibold text-sm">Mortgage Type</label>
+            <h2 for="mortgage type" class="text-slate700 font-semibold text-sm">Mortgage Type</h2>
             <div id="form-control" class="flex flex-col gap-y-3 mt-2">
 
               <label class="cursor-pointer hover:border-lime checked:bg-lime checked:border-lime w-full border border-slate700 rounded py-3 px-5 text-slate900 font-bold">
@@ -74,7 +75,7 @@
               </label>
               
             </div>
-            <small id="error-msg" class="error-msg"></small>
+            <span></span>
 
           </div>
       
@@ -145,6 +146,8 @@
     Coded by <a href="https://github.com/Chukwubuikem4">Chukwubuikem4</a>.
   </div> -->
   <script src="https://kit.fontawesome.com/240a052288.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="JS/error-vaildation.js"></script>
+  <script src="JS/active-state.js"></script>
+
 </body>
 </html>

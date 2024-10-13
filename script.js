@@ -38,8 +38,8 @@ const getFormErrors = () =>{
 
     } else if (amountValue < 10000){
         setErrorsFor(amount_input, "Amount should not be less than £10,000");
-    } 
-
+    }
+    
     if (termValue === "" || termValue === null){
         setErrorsFor(term_input, "This Field is required")
 
@@ -197,7 +197,7 @@ const showResults = (monthly, total) =>{
         completedResult.classList.remove('hidden');
         emptyResult.style.display = 'none';
     }
-
+    
     const monthlyRepayment_h1 = document.querySelector('#monthly-repayment-result');
     monthlyRepayment_h1.innerText = monthly;
     const totalRepayment_h3 = document.querySelector('#over-the-term-result');

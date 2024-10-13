@@ -4,10 +4,6 @@
     font-family: 'Plus Jakarta Sans';
 };
 
-.border-rad{
-    border-radius: 3rem !important;
-}
-
 .border-radius-left{
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
@@ -29,6 +25,11 @@
         border-top-right-radius: 0;
         border-bottom-left-radius: 1.5rem;
 
+    }
+
+    .border-bottom-left-radius{
+    
+        border-bottom-left-radius: 1.5rem;
     }
 }
 
